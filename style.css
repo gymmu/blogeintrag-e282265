@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  background-color: lightgray;
+  background-color: white;
   font-family: sans-serif;
 }
 
@@ -40,4 +40,23 @@ body {
 .container-with-bg > div.bg-img > img {
   width: 100%;
   transform: translateY(-50%);
+}
+
+
+/* Erstellt einen Container mit 2 Elementen nebeneinander. */
+.text-next-to-img {
+  display: grid;
+  grid-template-columns: 70% auto; /* gibt an wie der Platz aufgeteilt wird. */
+  gap: 1rem; /* Gibt an wie viel Platz zwischen den Elementen ist. */
+}
+
+/* Gibt Stiele für den Textblock an. */
+.text-next-to-img > .text {
+  border: 1px solid lightgray;
+  padding: 1rem 2rem;
+}
+
+/* Macht dass das Bild die Breite des Containers annimmt. */
+.text-next-to-img > img {
+  width: 100%;
 }
