@@ -6,6 +6,59 @@
 
 body {
   margin: 0;
-  background-color: lightgray;
+  background-color: white;
   font-family: sans-serif;
 }
+
+/* Zentriere alle Elemente in dem Container, setze die Höhe und die Breite fest. */
+.container-with-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+/* Setze den Container mit dem Inhalt vor den Hintergrund, damit können sich
+   Elemente überlappen. */
+.container-with-bg > div.content {
+  color: rgb(8, 8, 8);
+  z-index: 1;
+}
+
+/* Nimm den Bild-Container aus dem normalen Dokumentenfluss raus, und verstecke
+   alles was über das enthaltende Element heraus läuft. */
+.container-with-bg > div.bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Skaliere das Bild auf die volle Breite und zentriere es vertikal. */
+.container-with-bg > div.bg-img > img {
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+
+/* Erstellt einen Container mit 2 Elementen nebeneinander. */
+.text-next-to-img {
+  display: grid;
+  grid-template-columns: 70% auto; /* gibt an wie der Platz aufgeteilt wird. */
+  gap: 1rem; /* Gibt an wie viel Platz zwischen den Elementen ist. */
+}
+
+/* Gibt Stiele für den Textblock an. */
+.text-next-to-img > .text {
+  border: 1px solid lightgray;
+  padding: 1rem 2rem;
+}
+
+/* Macht dass das Bild die Breite des Containers annimmt. */
+.text-next-to-img > img {
+  width: 100%;
+}
+
+
